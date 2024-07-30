@@ -1,0 +1,20 @@
+let clienteMonto = prompt("ingrese un monto")
+let clienteMoneda = prompt("eliga el tipo de cambio")
+
+function convertir(Cantidad, moneda) { 
+    let dolar = 40
+    let Euro =
+
+
+}
+
+
+let precio = prompt("ingrese un monto")
+
+const iva = x => x * 0.21
+
+
+
+function calculoIVA(precio) { 
+    const nuevoprecio = precio + iva(precio)
+    console.log(nuevoprecio)
