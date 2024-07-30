@@ -17,13 +17,12 @@ let dolar = 40;
 let real = 8;
 let yen = 1;
 
-let cantidad = 0
-let moneda = prompt("moneda")
+
+let moneda = prompt("introduce un tipo de cambio que quieras convertir!")
 
 function convertir(cantidad, moneda){
     
     
-
     if( moneda == libra ){ 
         return ("£" +" "+ (cantidad=prompt("introduce un monto")) / libra)
     }
@@ -49,5 +48,5 @@ function convertir(cantidad, moneda){
     
    
 }
-console.log(convertir(cantidad, moneda))
+console.log(convertir(4000, dolar))
 
