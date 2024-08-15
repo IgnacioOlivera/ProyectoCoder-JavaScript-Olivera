@@ -109,7 +109,7 @@ const validarAlquilerUsuario = (nombre) =>{
 
 }
 
-    
+
 alert("Bienvenidos a ViajesDeVerano")
 
 let usuario = parseInt(prompt(` Eliga el numero de lo que desea realizar 
@@ -127,6 +127,7 @@ while(usuario !=3){
             break;
         case 2:
             alert(`consultando promociones y cupones de descuento`);
+            alert(`No hay disponible ningun descuento de temporada aun!`);
             break;
         default:
             alert(`Asegurate de escribir correctamente una de las opciones`);    
