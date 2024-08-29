@@ -145,18 +145,19 @@
 const contenedorCards = document.getElementById("alquileres-container")
 
 
-function crearCardsAlquileresInicio(alquileres){
-    alquileres.forEach(alquiler =>{
+function crearCardsAlquileresInicio(productos){
+    productos.forEach(producto =>{
         const nuevoAlquiler = document.createElement("div");
-        nuevoAlquiler.classList = "card-alquiler";
+        nuevoAlquiler.classList = "card-producto";
         nuevoAlquiler.innerHTML = `
-          <img src="./assets/img/${alquiler.id}.jpeg">
-          <h3>${alquiler.nombre}</h3> 
-          <p>${alquiler.precio}</p>
+          <img src="./assets/img/${producto.id}">
+          <h3>${producto.nombre}</h3> 
+          <p>${producto.precio}</p>
           <button> Reservar </button>
 
         `
         contenedorCards.appendChild(nuevoAlquiler);
+        nuevoAlquiler.getElementsByTagName("button")[0].addEventListener("click",()=> guardarReserva(producto))
         
     });
 }

@@ -8,29 +8,32 @@ body {
 #alquileres-container{ 
     display: flex;
     flex-wrap: wrap;
-    max-width: 900px;
+    max-width: 800px;
     margin: auto;
     gap: 15px;
     color: white;
 
 }
-.card-alquiler{ 
-    max-width: 400px;
+.card-producto{ 
+    width: 250px;
+    height: 180px;
     text-align: center;
     background-color: rgb(0, 0, 0);
     padding: 5px;
     color: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 5);
     transition: 200ms;
+    align-items: center;
+    margin: auto;
 
 
 }
-.card-alquiler:hover{ 
+.card-producto:hover{ 
     translate: 0  -8px;
     box-shadow: 0 10px 5px rgba(0, 0, 0, 5);
 }
 
-.card-alquiler img {
+.card-producto img {
     width: 100%;
 
 
