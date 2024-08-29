@@ -54,87 +54,111 @@
 /* SIMULADOR DE ECOMMERCE-AlQUILER DE HOSPEDAJES Y VIAJES PARA PROYECTO FINAL*/
 /* Defino las clases primero para armar mis tipos de alquileres*/
 
-class Alquiler {
-      constructor(id,nombre,precio,categoria){
-        this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.categoria = categoria;
-    }
+// class Alquiler {
+//       constructor(id,nombre,precio,categoria){
+//         this.id = id;
+//         this.nombre = nombre;
+//         this.precio = precio;
+//         this.categoria = categoria;
+//     }
 
-}
+// }
 
-const alquileres =[ 
-    new Alquiler (1,"Departamento" ,"USD" +100,"Airbnb"),
-    new Alquiler (2,"Habitacion de hotel","USD" +200,"hoteles"),
-    new Alquiler (3,"Casa" , "USD" +250, "Casas"),
-    new Alquiler (4,"Cabaña","USD" +50,"Camping"),
-]
+// const alquileres =[ 
+//     new Alquiler (1,"Departamento" ,"USD" +100,"Airbnb"),
+//     new Alquiler (2,"Habitacion de hotel","USD" +200,"hoteles"),
+//     new Alquiler (3,"Casa" , "USD" +250, "Casas"),
+//     new Alquiler (4,"Cabaña","USD" +50,"Camping"),
+// ]
 
 
 
-const alquilarViajes = () =>{
-    let interaccion = '';
+// const alquilarViajes = () =>{
+//     let interaccion = '';
 
-    do {
-        let tipoAlquiler =  prompt(generarMenuAlquileres());
-        let alquiler = validarAlquilerUsuario(tipoAlquiler);
+//     do {
+//         let tipoAlquiler =  prompt(generarMenuAlquileres());
+//         let alquiler = validarAlquilerUsuario(tipoAlquiler);
 
-        if(alquiler){
-            alert(`El tipo de alquiler es: ${alquiler.nombre}`)
-        }else{
-            alert(`El hospedaje ingresado no es correcto`)
-            continue
+//         if(alquiler){
+//             alert(`El tipo de alquiler es: ${alquiler.nombre}`)
+//         }else{
+//             alert(`El hospedaje ingresado no es correcto`)
+//             continue
 
-        }
+//         }
 
-        interaccion = prompt("quieres reservar otro hospedaje? (SI - NO)");
+//         interaccion = prompt("quieres reservar otro hospedaje? (SI - NO)");
 
-    }while(interaccion.toLowerCase() != "no");
+//     }while(interaccion.toLowerCase() != "no");
   
 
 
-}
-const generarMenuAlquileres = () =>{
-    let menu = "Estos alquileres estan disponibles\n\n"
+// }
+// const generarMenuAlquileres = () =>{
+//     let menu = "Estos alquileres estan disponibles\n\n"
+//     alquileres.forEach(alquiler =>{
+//         menu+= `* ${alquiler.nombre} - ${alquiler.precio}\n`
+//     });
+//     menu+=`\n Ingrese el tipo de alojamiento que desea alquilar.`
+//     return menu;
+
+// }
+// const validarAlquilerUsuario = (nombre) =>{
+//     return alquileres.find(alquiler => alquiler.nombre.toLowerCase() === nombre.toLowerCase());
+
+// }
+
+
+// alert("Bienvenidos a ViajesDeVerano")
+
+// let usuario = parseInt(prompt(` Eliga el numero de lo que desea realizar 
+
+//     1 - Alquilar un alojamiento para su viaje.
+//     2 - Consultar cupones o descuentos. 
+//     3 - Salir del Sitio`));
+
+// while(usuario !=3){
+
+//     switch(usuario){
+//         case 1:
+//             alert(`consultando alojamientos disponibles hoy`);
+//             alquilarViajes();
+//             break;
+//         case 2:
+//             alert(`consultando promociones y cupones de descuento`);
+//             alert(`No hay disponible ningun descuento de temporada aun`);
+//             break;
+//         default:
+//             alert(`Asegurate de escribir correctamente una de las opciones`);    
+//     }
+//     usuario = parseInt(prompt(` Eliga el numero de lo que desea realizar 
+//         1 - alquilar un alojamiento para su viaje.
+//         2 - consultar cupones o descuentos. 
+//         3 - Salir del Sitio`));   
+// }
+// alert(`Gracias por confiarnos tus viajes`)
+
+// IMPLEMENTACION de DOM / EVENTOS / Storage & JSON AL PROYECTO //
+
+
+const contenedorCards = document.getElementById("alquileres-container")
+
+
+function crearCardsAlquileresInicio(alquileres){
     alquileres.forEach(alquiler =>{
-        menu+= `* ${alquiler.nombre} - ${alquiler.precio}\n`
+        const nuevoAlquiler = document.createElement("div");
+        nuevoAlquiler.classList = "card-alquiler";
+        nuevoAlquiler.innerHTML = `
+          <img src="./assets/img/${alquiler.id}.jpeg">
+          <h3>${alquiler.nombre}</h3> 
+          <p>${alquiler.precio}</p>
+          <button> Reservar </button>
+
+        `
+        contenedorCards.appendChild(nuevoAlquiler);
+        
     });
-    menu+=`\n Ingrese el tipo de alojamiento que desea alquilar.`
-    return menu;
-
 }
-const validarAlquilerUsuario = (nombre) =>{
-    return alquileres.find(alquiler => alquiler.nombre.toLowerCase() === nombre.toLowerCase());
-
-}
-
-
-alert("Bienvenidos a ViajesDeVerano")
-
-let usuario = parseInt(prompt(` Eliga el numero de lo que desea realizar 
-
-    1 - Alquilar un alojamiento para su viaje.
-    2 - Consultar cupones o descuentos. 
-    3 - Salir del Sitio`));
-
-while(usuario !=3){
-
-    switch(usuario){
-        case 1:
-            alert(`consultando alojamientos disponibles hoy`);
-            alquilarViajes();
-            break;
-        case 2:
-            alert(`consultando promociones y cupones de descuento`);
-            alert(`No hay disponible ningun descuento de temporada aun!`);
-            break;
-        default:
-            alert(`Asegurate de escribir correctamente una de las opciones`);    
-    }
-    usuario = parseInt(prompt(` Eliga el numero de lo que desea realizar 
-        1 - alquilar un alojamiento para su viaje.
-        2 - consultar cupones o descuentos. 
-        3 - Salir del Sitio`));   
-}
-alert(`Gracias por confiarnos tus viajes`)
+ 
+crearCardsAlquileresInicio(alquileres);

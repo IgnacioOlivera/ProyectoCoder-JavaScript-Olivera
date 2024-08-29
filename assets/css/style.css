@@ -1,20 +1,67 @@
-let clienteMonto = prompt("ingrese un monto")
-let clienteMoneda = prompt("eliga el tipo de cambio")
+/* CARDS */
+body { 
+    background-image: url(/assets/img/lovepik-summer-travel-background-picture_501594386.jpg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+}
+#alquileres-container{ 
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: auto;
+    gap: 15px;
+    color: white;
 
-function convertir(Cantidad, moneda) { 
-    let dolar = 40
-    let Euro =
+}
+.card-alquiler{ 
+    max-width: 400px;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    padding: 5px;
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 5);
+    transition: 200ms;
+
+
+}
+.card-alquiler:hover{ 
+    translate: 0  -8px;
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 5);
+}
+
+.card-alquiler img {
+    width: 100%;
+
+
+ }
+
+h1 { 
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
 
 
 }
 
-
-let precio = prompt("ingrese un monto")
-
-const iva = x => x * 0.21
-
+ h3, p { 
+    margin: 5px;
+    color: white;
 
 
-function calculoIVA(precio) { 
-    const nuevoprecio = precio + iva(precio)
-    console.log(nuevoprecio)
+ }
+
+ button { 
+    background-color: rgb(255, 188, 63);
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+ }
+footer { 
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    margin-top: 100px;
+    text-align: center;
+
+    
+}
