@@ -1,70 +1,91 @@
-/* CARDS */
-body { 
-    background-image: url(/assets/img/lovepik-summer-travel-background-picture_501594386.jpg);
+/* FUENTES LETRA */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+/* maquetado */
+
+*{ 
+    margin: 0;
+    padding: 0;
+    font-family:"Titillium Web";
+}
+body{
+    background-image: url(/assets/img/fondo2.jpg);
+    background-position: center;
     background-repeat: no-repeat;
-    background-position:center;
-    background-size: cover;
-}
-#alquileres-container{ 
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 800px;
-    margin: auto;
-    gap: 15px;
-    color: white;
-
-}
-.card-producto{ 
-    width: 250px;
-    height: 180px;
-    text-align: center;
-    background-color: rgb(0, 0, 0);
-    padding: 5px;
-    color: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 5);
-    transition: 200ms;
-    align-items: center;
-    margin: auto;
-
-
-}
-.card-producto:hover{ 
-    translate: 0  -8px;
-    box-shadow: 0 10px 5px rgba(0, 0, 0, 5);
-}
-
-.card-producto img {
     width: 100%;
+    height: 100%;
+    background-size: cover;
+    
+    
+    
+}
 
-
- }
-
-h1 { 
+header h1{ 
     text-align: center;
-    color: rgb(255, 255, 255);
-    margin-top: 10px;
+    font-size: 35px;
+    color: black;
+    padding: 30px;
+}
+    
+.contenedor{ 
+    max-width: 1200px;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    contain: paint;
+}
 
+.contenedor .contenedor-productos{ 
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
+    grid-gap: 25px;
+    grid-row-gap: 30px;
+    width: 100%;
+    transition: .3s; 
+}
+
+.contenedor .contenedor-productos .producto{ 
+    max-width: 200px;
+    padding: 10px;
+    margin: auto;
+    border: 1px solid rgb(116, 116, 116);
+    border-radius: 10px;
+    transition: .3s;
+}
+.contenedor-productos .producto:hover{
+    box-shadow: 0 0 10px  rgb(116, 116, 116); 
+    scale: 1.05;
 
 }
 
- h3, p { 
-    margin: 5px;
-    color: white;
+.contenedor-productos .producto .img-producto{ 
+    width: 100%;
+    height: 170px;
+}
 
+.contenedor-productos .producto .titulo-producto{ 
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
- }
+.contenedor-productos .producto .precio-producto{ 
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
 
- button { 
-    background-color: rgb(255, 188, 63);
-    color: rgb(0, 0, 0);
+.contenedor-productos .producto .boton-producto{ 
+    display: block;
+    margin: 10px auto;
+    background: black;
+    border: none;
+    color: #fff;
+    padding: 5px 15px;
     border-radius: 5px;
     cursor: pointer;
- }
-footer { 
-    color: rgb(255, 255, 255);
-    text-decoration: underline;
-    margin-top: 100px;
-    text-align: center;
 
-    
 }
