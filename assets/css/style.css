@@ -137,6 +137,14 @@ header h1{
     transition: .3s;
     
 } 
+.titulo-items{
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+    
+
+
+}
  .carrito .header-carrito{
     background-color: #000;
     color: #fff;

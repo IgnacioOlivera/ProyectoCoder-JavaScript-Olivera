@@ -221,7 +221,7 @@ function agregarAlCarritoClicked(event){
     var titulo = item.getElementsByClassName('titulo-item')[0].innerText;
     var precio = item.getElementsByClassName('precio-item')[0].innerText;
     var imagenSrc = item.getElementsByClassName('img-item')[0].src;
-    console.log(imagenSrc);
+  
 
     agregarItemAlCarrito(titulo, precio, imagenSrc);
 
@@ -285,7 +285,6 @@ function agregarItemAlCarrito(titulo, precio, imagenSrc){
 function sumarCantidad(event){
     var buttonClicked = event.target;
     var selector = buttonClicked.parentElement;
-    console.log(selector.getElementsByClassName('carrito-item-cantidad')[0].value);
     var cantidadActual = selector.getElementsByClassName('carrito-item-cantidad')[0].value;
     cantidadActual++;
     selector.getElementsByClassName('carrito-item-cantidad')[0].value = cantidadActual;
@@ -295,7 +294,6 @@ function sumarCantidad(event){
 function restarCantidad(event){
     var buttonClicked = event.target;
     var selector = buttonClicked.parentElement;
-    console.log(selector.getElementsByClassName('carrito-item-cantidad')[0].value);
     var cantidadActual = selector.getElementsByClassName('carrito-item-cantidad')[0].value;
     cantidadActual--;
     if(cantidadActual>=1){
@@ -336,7 +334,6 @@ function actualizarTotalCarrito(){
 
         var precio = parseFloat(precioElemento.innerText.replace('$','').replace('.',''));
         var cantidadItem = item.getElementsByClassName('carrito-item-cantidad')[0];
-        console.log(precio);
         var cantidad = cantidadItem.value;
         total = total + (precio * cantidad);
     }
